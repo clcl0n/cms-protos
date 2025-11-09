@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package cms.protos;
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Cms.Protos";
+
+service TopicRouteService {
+  rpc Create(TopicRouteCreateRequest) returns (TopicRouteCreateResponse);
+  rpc GetById(TopicRouteByIdRequest) returns (TopicRouteByIdResponse);
+  rpc Delete(TopicRouteDeleteRequest) returns (google.protobuf.Empty);
+}
+
+message TopicRouteCreateRequest {
+  string slug = 1;
+}
+
+message TopicRouteCreateResponse {
+  string id = 1;
+  string full_path = 2;
+}
+
+message TopicRouteByIdRequest {
+  string id = 1;
+}
+
+message TopicRouteByIdResponse {
+  string id = 1;
+  string full_path = 2;
+}
+
+message TopicRouteDeleteRequest {
+  string id = 1;
+}
