@@ -1,15 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Cms.Protos</PackageId>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.Tools" Version="2.76.0" PrivateAssets="All" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <Protobuf Include="**/*.proto" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="**/*.proto" Pack="true" PackagePath="protos" />
   </ItemGroup>
 </Project>
