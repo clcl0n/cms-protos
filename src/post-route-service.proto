@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package cms.protos;
+
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "Cms.Protos";
+
+service PostRouteService {
+  rpc Create(PostRouteCreateRequest) returns (PostRouteCreateResponse);
+  rpc GetById(PostRouteByIdRequest) returns (PostRouteByIdResponse);
+  rpc Delete(PostRouteDeleteRequest) returns (google.protobuf.Empty);
+}
+
+message PostRouteCreateRequest {
+  string slug = 1;
+}
+
+message PostRouteCreateResponse {
+  string id = 1;
+  string full_path = 2;
+}
+
+message PostRouteByIdRequest {
+  string id = 1;
+}
+
+message PostRouteByIdResponse {
+  string id = 1;
+  string full_path = 2;
+}
+
+message PostRouteDeleteRequest {
+  string id = 1;
+}
