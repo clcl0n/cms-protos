@@ -3,12 +3,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Cms.Protos</PackageId>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
     <NoWarn>$(NoWarn);NU5128</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <Protobuf Include="**/*.proto" />
+    <PackageReference Include="Google.Protobuf" Version="3.33.0" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.76.0" />
   </ItemGroup>
 
   <ItemGroup>
