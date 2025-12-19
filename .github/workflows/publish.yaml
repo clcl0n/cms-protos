@@ -10,6 +10,6 @@ env:
 
 jobs:
   publish_nuget:
-    uses: clcl0n/cms-workflows/.github/workflows/publish-nuget.yaml@main
+    uses: ContentMess/cms-workflows/.github/workflows/publish-nuget.yaml@main
     with:
       version: ${{ github.ref_name }}
